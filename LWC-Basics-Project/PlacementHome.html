@@ -1,25 +1,49 @@
 <template>
 
-    <lightning-card title="Placement Portal">
+    <lightning-card title="Placement Dashboard" icon-name="standard:dashboard">
 
         <div class="slds-p-around_medium">
 
-            <p><strong>Today's Date:</strong> {todaysDate}</p>
+            <div class="slds-text-align_center">
+                <h1 class="slds-text-heading_large">
+                    Placement Portal
+                </h1>
+                <p class="slds-text-body_small">
+                    Welcome to the Student Placement Dashboard
+                </p>
+            </div>
 
-            <br>
+            <br/>
 
-            <p><strong>Welcome Student</strong></p>
+            <p>
+                <strong>📅 Today's Date:</strong> {todaysDate}
+            </p>
 
-            <br>
+            <br/>
 
-            <p>Number of Companies : {companies}</p>
+            <div class="slds-box slds-theme_default">
 
-            <p>Number of Jobs : {jobs}</p>
+                <p>
+                    <strong>🏢 Number of Companies:</strong> {companies}
+                </p>
 
-            <p>Applications Submitted : {applications}</p>
+                <br/>
+
+                <p>
+                    <strong>💼 Number of Jobs:</strong> {jobs}
+                </p>
+
+                <br/>
+
+                <p>
+                    <strong>📄 Applications Submitted:</strong> {applications}
+                </p>
+
+            </div>
 
         </div>
 
     </lightning-card>
+    <c-placement-dashboard></c-placement-dashboard>
 
 </template>
