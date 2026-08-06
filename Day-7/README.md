@@ -96,7 +96,8 @@ Salesforce Database
 Day-7/
 │
 ├── README.md
-├── Chapter7-Notes.md
+├── Chapter7-Notes-1.md
+├── Chapter7-Notes-2.md
 ├── Bulkification.md
 ├── Sprint7-Learning.md
 └── Screenshots/
