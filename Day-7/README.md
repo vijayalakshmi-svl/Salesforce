@@ -99,6 +99,7 @@ Day-7/
 ├── Chapter7-Notes-1.md
 ├── Chapter7-Notes-2.md
 ├── Chapter7-Notes-3.md
+├── Chapter7-Notes-4.md
 ├── Bulkification.md
 ├── Sprint7-Learning.md
 └── Screenshots/
