@@ -31,11 +31,22 @@ The architecture follows one important engineering principle:
 
 > **The UI requests. The business layer decides.**
 
-The Lightning Web Components are responsible for presentation,
-interaction, component state, and communication.
+The Lightning Web Components are responsible for:
 
-The Apex and service layers are responsible for business rules,
-validation, and database operations.
+- Presentation
+- User interaction
+- Component state
+- Event handling
+- Communication between components
+- Displaying success and error feedback
+
+The Apex and service layers are responsible for:
+
+- Business rules
+- Validation
+- Application processing
+- Database operations
+- Server-side logic
 
 ---
 
