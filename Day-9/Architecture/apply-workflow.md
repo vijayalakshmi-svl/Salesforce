@@ -1,4 +1,3 @@
-
 # 📝 Apply Workflow — Day 9
 
 **Student Placement Portal — Lightning Web Components**
@@ -22,30 +21,70 @@ B.Tech — Computer Science & Business Systems
 
 # 📌 Overview
 
-The **Apply Workflow** is the core user interaction of the Student
-Placement Portal.
+The **Apply Workflow** represents the complete student application journey
+implemented in the Student Placement Portal.
 
-It connects the Lightning Web Components frontend with the Apex
-controller and application service to allow a student to submit an
-application for an eligible job.
+It connects the Lightning Web Components frontend with the Salesforce Apex
+business layer to process a student's application for an eligible placement
+opportunity.
 
-The complete workflow is:
+The workflow is designed to provide:
+
+- Clear job selection
+- Student selection
+- Application submission
+- Business validation
+- Duplicate application prevention
+- CGPA eligibility validation
+- Application deadline validation
+- Success and error handling
+- Application record creation
+- Updated application visibility
+
+---
+
+# 🎯 Workflow Objective
+
+The primary objective is to create a reliable application process where a
+student can apply for a suitable placement opportunity while Salesforce
+validates the request before creating the application record.
 
 ```text
+Student
+   │
+   ▼
 View Eligible Jobs
-        ↓
+   │
+   ▼
 Select Job
-        ↓
+   │
+   ▼
 Click Apply
-        ↓
+   │
+   ▼
 Select Student
-        ↓
+   │
+   ▼
 Submit Application
-        ↓
+   │
+   ▼
+Apex Business Layer
+   │
+   ▼
 Business Validation
-        ↓
+   │
+   ├── Duplicate Check
+   ├── CGPA Check
+   └── Deadline Check
+   │
+   ▼
 Create Application
-        ↓
-Success / Error
-        ↓
+   │
+   ▼
+Success Response
+   │
+   ▼
+Refresh Application Data
+   │
+   ▼
 My Applications
