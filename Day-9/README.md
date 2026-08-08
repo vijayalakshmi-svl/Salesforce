@@ -19,99 +19,107 @@ B.Tech — Computer Science & Business Systems
 
 ---
 
-# 📌 Sprint Overview
+## 🎯 Sprint Objectives
 
-Day 9 focuses on **Lightning Web Components (LWC)** and building an
-interactive **Student Placement Portal** using Salesforce.
+The major objectives of Day 9 were:
 
-The sprint connects the LWC frontend with the existing Apex backend
-architecture and implements a complete placement application workflow.
-
----
-
-# 🎯 Learning Objectives
-
-By completing this sprint, I learned how to:
-
-- ✅ Build reusable Lightning Web Components
-- ✅ Use `@api` and `@wire`
-- ✅ Implement Imperative Apex
-- ✅ Implement Parent-to-Child communication
-- ✅ Implement Child-to-Parent communication
-- ✅ Use Custom Events
-- ✅ Build reusable Job Card components
-- ✅ Manage LWC component state
-- ✅ Handle Loading, Success and Error states
-- ✅ Implement application submission
-- ✅ Apply business validations
-- ✅ Display submitted applications
-- ✅ Refresh UI after data changes
-- ✅ Debug LWC components
-- ✅ Deploy LWC and Apex components
+- Understand the architecture of Lightning Web Components
+- Build reusable and modular LWC components
+- Understand component lifecycle and state management
+- Implement Parent-to-Child communication
+- Implement Child-to-Parent communication
+- Use `@api` for public properties and methods
+- Use Custom Events for component communication
+- Retrieve Salesforce data using `@wire`
+- Perform user-triggered operations using Imperative Apex
+- Connect LWC components with Apex controllers
+- Build reusable job-card interfaces
+- Implement student application workflows
+- Implement application validations
+- Display application information dynamically
+- Handle loading, success, empty and error states
+- Refresh UI after data modification
+- Test and debug LWC components
+- Deploy the completed Salesforce implementation
 
 ---
 
-# 📚 Main Topics Covered
+# 📚 Topics Covered
 
 | Topic | Status |
 |---|:---:|
 | Lightning Web Components | ✅ |
-| Component Architecture | ✅ |
+| Component-Based Architecture | ✅ |
+| LWC Folder Structure | ✅ |
+| HTML Templates | ✅ |
+| JavaScript Controllers | ✅ |
+| Component Metadata | ✅ |
 | `@api` | ✅ |
 | `@wire` | ✅ |
 | Imperative Apex | ✅ |
-| Parent–Child Communication | ✅ |
+| Parent-to-Child Communication | ✅ |
+| Child-to-Parent Communication | ✅ |
 | Custom Events | ✅ |
+| Component Reusability | ✅ |
+| Component State Management | ✅ |
 | Job Card Component | ✅ |
-| Application Workflow | ✅ |
-| Duplicate Validation | ✅ |
+| Placement Dashboard | ✅ |
+| Placement Home | ✅ |
+| Eligible Jobs | ✅ |
+| My Applications | ✅ |
+| Application Submission | ✅ |
+| Duplicate Application Validation | ✅ |
 | CGPA Validation | ✅ |
 | Deadline Validation | ✅ |
-| UI State Management | ✅ |
-| My Applications | ✅ |
-| Testing & Verification | ✅ |
+| Loading States | ✅ |
+| Error Handling | ✅ |
+| UI Refresh | ✅ |
+| Apex Integration | ✅ |
+| LWC Testing | ✅ |
 | Debugging | ✅ |
-| Deployment | ✅ |
+| Salesforce Deployment | ✅ |
 
 ---
 
-# 🛠️ Practical Implementation
+# 🏢 Business Problem
 
-The Student Placement Portal was developed using reusable LWC
-components and an Apex service architecture.
+Students need a centralized platform where they can:
 
-| Component / Class | Purpose |
-|---|---|
-| `eligibleJobs` | Displays eligible jobs and manages the application flow |
-| `jobCard` | Displays individual job information |
-| `myApplications` | Displays submitted applications |
-| `placementDashboard` | Provides the placement dashboard |
-| `PlacementController` | Connects LWC with Apex |
-| `ApplicationService` | Handles application business logic |
+1. View available placement opportunities
+2. Understand job requirements
+3. Identify eligible opportunities
+4. Select a suitable job
+5. Submit an application
+6. Receive validation feedback
+7. Track submitted applications
+8. View application status
+
+The Student Placement Portal was designed to represent this workflow inside Salesforce.
 
 ---
 
-# 🔄 Application Flow
+# 💡 Solution
+
+The solution uses a component-based Salesforce architecture where different LWC components are responsible for different parts of the placement experience.
 
 ```text
-Student
-   ↓
-Placement Dashboard
-   ↓
-Eligible Jobs
-   ↓
-Job Card
-   ↓
-Apply
-   ↓
-Select Student
-   ↓
-Submit Application
-   ↓
-Business Validation
-   ↓
-Application Record
-   ↓
-Success
-   ↓
-My Applications
+                    STUDENT PLACEMENT PORTAL
+                              │
+                              ▼
+                       Placement Home
+                              │
+              ┌───────────────┴───────────────┐
+              ▼                               ▼
+         Eligible Jobs                  My Applications
+              │                               │
+              ▼                               ▼
+           Job Card                     Application Data
+              │
+              ▼
+       Application Action
+              │
+              ▼
+        Apex Business Layer
+              │
+              ▼
+        Salesforce Data
