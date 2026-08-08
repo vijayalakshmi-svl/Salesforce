@@ -5,6 +5,15 @@
   <br>
   <em>Building an Interactive Placement Experience with Salesforce LWC</em>
 </p>
+<div align="center">
+
+![Salesforce](https://img.shields.io/badge/Salesforce-Platform-blue?style=for-the-badge&logo=salesforce)
+![LWC](https://img.shields.io/badge/Lightning-Web%20Components-00A1E0?style=for-the-badge&logo=salesforce)
+![Apex](https://img.shields.io/badge/Apex-Integration-red?style=for-the-badge)
+![Components](https://img.shields.io/badge/Component-Based%20Architecture-purple?style=for-the-badge)
+![Bootcamp](https://img.shields.io/badge/Bootcamp-Day%209-orange?style=for-the-badge)
+
+</div>
 
 ---
 
