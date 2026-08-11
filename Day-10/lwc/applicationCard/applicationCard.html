@@ -1,0 +1,124 @@
+<template>
+
+    <article class="slds-card slds-card_boundary">
+
+        <!-- =====================================================
+             HEADER
+             ===================================================== -->
+
+        <div class="slds-card__header slds-grid">
+
+            <header
+                class="slds-media slds-media_center slds-has-flexi-truncate"
+            >
+
+                <div class="slds-media__figure">
+
+                    <lightning-icon
+                        icon-name="standard:form"
+                        size="small">
+                    </lightning-icon>
+
+                </div>
+
+
+                <div class="slds-media__body">
+
+                    <h2 class="slds-card__header-title">
+
+                        <span class="slds-truncate">
+                            {jobName}
+                        </span>
+
+                    </h2>
+
+                </div>
+
+            </header>
+
+        </div>
+
+
+        <!-- =====================================================
+             APPLICATION DETAILS
+             ===================================================== -->
+
+        <div class="slds-card__body slds-card__body_inner">
+
+            <p class="slds-m-bottom_small">
+
+                <strong>
+                    Company:
+                </strong>
+
+                {companyName}
+
+            </p>
+
+
+            <p class="slds-m-bottom_small">
+
+                <strong>
+                    Application Date:
+                </strong>
+
+                {applicationDate}
+
+            </p>
+
+
+            <p class="slds-m-bottom_small">
+
+                <strong>
+                    Status:
+                </strong>
+
+                {status}
+
+            </p>
+
+
+            <!-- =================================================
+                 STATUS BADGES
+                 ================================================= -->
+
+            <template if:true={isApplied}>
+
+                <span class="slds-badge slds-theme_info">
+                    Applied
+                </span>
+
+            </template>
+
+
+            <template if:true={isPending}>
+
+                <span class="slds-badge slds-theme_warning">
+                    Pending
+                </span>
+
+            </template>
+
+
+            <template if:true={isSelected}>
+
+                <span class="slds-badge slds-theme_success">
+                    Selected
+                </span>
+
+            </template>
+
+
+            <template if:true={isRejected}>
+
+                <span class="slds-badge slds-theme_error">
+                    Rejected
+                </span>
+
+            </template>
+
+        </div>
+
+    </article>
+
+</template>
