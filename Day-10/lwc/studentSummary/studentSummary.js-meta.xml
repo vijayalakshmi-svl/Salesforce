@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <apiVersion>65.0</apiVersion>
+
+    <isExposed>false</isExposed>
+
+    <masterLabel>Student Summary</masterLabel>
+
+    <description>
+        Day 10 Student Summary Lightning Web Component
+        demonstrating @api, @wire and reactive Salesforce data.
+    </description>
+
+</LightningComponentBundle>
