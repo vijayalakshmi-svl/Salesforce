@@ -7,6 +7,10 @@
 
         <div class="slds-p-around_medium">
 
+            <!-- =========================
+                 LOADING
+                 ========================= -->
+
             <template if:true={isLoading}>
 
                 <lightning-spinner
@@ -16,16 +20,28 @@
 
             </template>
 
+
+            <!-- =========================
+                 SUCCESS MESSAGE
+                 ========================= -->
+
             <template if:true={successMessage}>
 
                 <div
                     class="slds-notify slds-notify_alert slds-theme_success slds-m-bottom_medium"
                     role="alert"
                 >
+
                     <span>{successMessage}</span>
+
                 </div>
 
             </template>
+
+
+            <!-- =========================
+                 ERROR MESSAGE
+                 ========================= -->
 
             <template if:true={errorMessage}>
 
@@ -33,10 +49,17 @@
                     class="slds-notify slds-notify_alert slds-theme_error slds-m-bottom_medium"
                     role="alert"
                 >
+
                     <span>{errorMessage}</span>
+
                 </div>
 
             </template>
+
+
+            <!-- =========================
+                 REUSABLE JOB CARDS
+                 ========================= -->
 
             <template if:true={jobs.length}>
 
@@ -52,71 +75,11 @@
                             class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-bottom_medium"
                         >
 
-                            <article class="slds-card slds-card_boundary">
-
-                                <div class="slds-card__header slds-grid">
-
-                                    <header
-                                        class="slds-media slds-media_center slds-has-flexi-truncate"
-                                    >
-
-                                        <div class="slds-media__figure">
-
-                                            <lightning-icon
-                                                icon-name="standard:job_position"
-                                                size="small">
-                                            </lightning-icon>
-
-                                        </div>
-
-                                        <div class="slds-media__body">
-
-                                            <h2 class="slds-card__header-title">
-
-                                                <span class="slds-truncate">
-                                                    {job.Name}
-                                                </span>
-
-                                            </h2>
-
-                                        </div>
-
-                                    </header>
-
-                                </div>
-
-                                <div class="slds-card__body slds-card__body_inner">
-
-                                    <p class="slds-m-bottom_small">
-                                        <strong>Company:</strong>
-                                        {job.Company__c}
-                                    </p>
-
-                                    <p class="slds-m-bottom_small">
-                                        <strong>Minimum CGPA:</strong>
-                                        {job.Minimum_CGPA__c}
-                                    </p>
-
-                                    <p class="slds-m-bottom_small">
-                                        <strong>Closing Date:</strong>
-                                        {job.Closing_Date__c}
-                                    </p>
-
-                                </div>
-
-                                <footer class="slds-card__footer">
-
-                                    <lightning-button
-                                        variant="brand"
-                                        label="Apply Now"
-                                        data-job-id={job.Id}
-                                        onclick={handleApply}
-                                    >
-                                    </lightning-button>
-
-                                </footer>
-
-                            </article>
+                            <c-job-card
+                                job={job}
+                                onapply={handleApply}
+                            >
+                            </c-job-card>
 
                         </div>
 
@@ -125,6 +88,11 @@
                 </div>
 
             </template>
+
+
+            <!-- =========================
+                 EMPTY STATE
+                 ========================= -->
 
             <template if:false={jobs.length}>
 
