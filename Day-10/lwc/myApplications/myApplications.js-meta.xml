@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <apiVersion>65.0</apiVersion>
+
+    <isExposed>false</isExposed>
+
+    <masterLabel>My Applications</masterLabel>
+
+    <description>
+        Day 10 My Applications Lightning Web Component
+        demonstrating @api, @wire, Apex integration,
+        application tracking and empty-state handling.
+    </description>
+
+</LightningComponentBundle>
