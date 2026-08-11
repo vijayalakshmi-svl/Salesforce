@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <apiVersion>65.0</apiVersion>
+
+    <isExposed>false</isExposed>
+
+    <masterLabel>Job Card</masterLabel>
+
+    <description>
+        Reusable Day 10 Job Card Lightning Web Component
+        demonstrating @api and Custom Events.
+    </description>
+
+</LightningComponentBundle>
