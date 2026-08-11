@@ -1,0 +1,114 @@
+<template>
+
+    <lightning-card
+        title="My Applications"
+        icon-name="standard:form"
+    >
+
+        <div class="slds-p-around_medium">
+
+            <!-- =========================
+                 LOADING
+                 ========================= -->
+
+            <template if:true={isLoading}>
+
+                <lightning-spinner
+                    alternative-text="Loading applications"
+                    size="medium">
+                </lightning-spinner>
+
+            </template>
+
+
+            <!-- =========================
+                 ERROR
+                 ========================= -->
+
+            <template if:true={errorMessage}>
+
+                <div
+                    class="slds-notify slds-notify_alert slds-theme_error slds-m-bottom_medium"
+                    role="alert"
+                >
+
+                    <span>{errorMessage}</span>
+
+                </div>
+
+            </template>
+
+
+            <!-- =========================
+                 APPLICATION CARDS
+                 ========================= -->
+
+            <template if:true={hasApplications}>
+
+                <div class="slds-grid slds-wrap slds-gutters">
+
+                    <template
+                        for:each={applications}
+                        for:item="application"
+                    >
+
+                        <div
+                            key={application.Id}
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-m-bottom_medium"
+                        >
+
+                            <c-application-card
+                                application={application}>
+                            </c-application-card>
+
+                        </div>
+
+                    </template>
+
+                </div>
+
+            </template>
+
+
+            <!-- =========================
+                 EMPTY STATE
+                 ========================= -->
+
+            <template if:false={hasApplications}>
+
+                <template if:false={isLoading}>
+
+                    <div
+                        class="slds-align_absolute-center slds-p-around_xx-large"
+                    >
+
+                        <div class="slds-text-align_center">
+
+                            <lightning-icon
+                                icon-name="utility:info"
+                                size="medium"
+                                class="slds-m-bottom_small">
+                            </lightning-icon>
+
+                            <h3 class="slds-text-heading_medium">
+                                No Applications Yet
+                            </h3>
+
+                            <p class="slds-text-color_weak slds-m-top_small">
+                                You have not submitted any job
+                                applications yet.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </template>
+
+            </template>
+
+        </div>
+
+    </lightning-card>
+
+</template>
