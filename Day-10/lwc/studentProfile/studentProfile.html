@@ -1,0 +1,173 @@
+<template>
+
+    <lightning-card
+        title="Student Profile"
+        icon-name="standard:contact"
+    >
+
+        <div class="slds-p-around_medium">
+
+            <!-- LOADING -->
+
+            <template if:true={isLoading}>
+
+                <lightning-spinner
+                    alternative-text="Loading student profile"
+                    size="medium">
+                </lightning-spinner>
+
+            </template>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <template if:true={successMessage}>
+
+                <div
+                    class="slds-notify slds-notify_alert slds-theme_success slds-m-bottom_medium"
+                    role="alert"
+                >
+
+                    <span>{successMessage}</span>
+
+                </div>
+
+            </template>
+
+
+            <!-- ERROR MESSAGE -->
+
+            <template if:true={errorMessage}>
+
+                <div
+                    class="slds-notify slds-notify_alert slds-theme_error slds-m-bottom_medium"
+                    role="alert"
+                >
+
+                    <span>{errorMessage}</span>
+
+                </div>
+
+            </template>
+
+
+            <!-- STUDENT PROFILE -->
+
+            <template if:true={student}>
+
+                <!-- VIEW MODE -->
+
+                <template if:false={isEditing}>
+
+                    <div class="slds-box slds-theme_default">
+
+                        <div class="slds-grid slds-wrap slds-gutters">
+
+                            <div
+                                class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2"
+                            >
+
+                                <p class="slds-text-title">
+                                    Student Name
+                                </p>
+
+                                <p class="slds-text-heading_small">
+                                    {student.Name}
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2"
+                            >
+
+                                <p class="slds-text-title">
+                                    CGPA
+                                </p>
+
+                                <p class="slds-text-heading_small">
+                                    {student.CGPA__c}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="slds-m-top_medium">
+
+                            <lightning-button
+                                variant="brand"
+                                label="Edit Profile"
+                                onclick={handleEdit}
+                            >
+                            </lightning-button>
+
+                        </div>
+
+                    </div>
+
+                </template>
+
+
+                <!-- EDIT MODE -->
+
+                <template if:true={isEditing}>
+
+                    <div class="slds-box slds-theme_default">
+
+                        <lightning-input
+                            type="text"
+                            label="Student Name"
+                            value={name}
+                            onchange={handleNameChange}
+                            required
+                        >
+                        </lightning-input>
+
+
+                        <lightning-input
+                            type="number"
+                            label="CGPA"
+                            value={cgpa}
+                            min="0"
+                            max="10"
+                            step="0.01"
+                            onchange={handleCgpaChange}
+                            required
+                            class="slds-m-top_medium"
+                        >
+                        </lightning-input>
+
+
+                        <div class="slds-m-top_medium">
+
+                            <lightning-button
+                                variant="brand"
+                                label="Save"
+                                onclick={handleSave}
+                            >
+                            </lightning-button>
+
+
+                            <lightning-button
+                                label="Cancel"
+                                onclick={handleCancel}
+                                class="slds-m-left_small"
+                            >
+                            </lightning-button>
+
+                        </div>
+
+                    </div>
+
+                </template>
+
+            </template>
+
+        </div>
+
+    </lightning-card>
+
+</template>
