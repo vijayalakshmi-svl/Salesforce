@@ -11,6 +11,7 @@ export default class EligibleJobs extends LightningElement {
     errorMessage = '';
     successMessage = '';
 
+
     // ============================================================
     // GET ELIGIBLE JOBS
     // ============================================================
@@ -23,22 +24,26 @@ export default class EligibleJobs extends LightningElement {
         this.isLoading = false;
 
         if (data) {
+
             this.jobs = data;
             this.errorMessage = '';
+
         } else if (error) {
+
             this.jobs = [];
             this.errorMessage = this.getErrorMessage(error);
+
         }
     }
 
 
     // ============================================================
-    // APPLY FOR JOB
+    // JOB CARD → ELIGIBLE JOBS
     // ============================================================
 
     handleApply(event) {
 
-        const jobId = event.currentTarget.dataset.jobId;
+        const jobId = event.detail.jobId;
 
         this.isLoading = true;
         this.successMessage = '';
@@ -56,11 +61,13 @@ export default class EligibleJobs extends LightningElement {
                 this.dispatchEvent(
                     new CustomEvent('applicationupdated')
                 );
+
             })
             .catch(error => {
 
                 this.errorMessage =
                     this.getErrorMessage(error);
+
             })
             .finally(() => {
 
@@ -80,6 +87,7 @@ export default class EligibleJobs extends LightningElement {
             error.body &&
             error.body.message
         ) {
+
             return error.body.message;
         }
 
