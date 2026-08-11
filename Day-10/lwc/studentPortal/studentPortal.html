@@ -1,0 +1,64 @@
+<template>
+
+    <lightning-card
+        title="Student Placement Portal"
+        icon-name="standard:education"
+    >
+
+        <div class="slds-p-around_medium">
+
+            <!-- =================================================
+                 STUDENT SUMMARY
+                 ================================================= -->
+            <c-student-summary
+                student-id={recordId}>
+            </c-student-summary>
+
+
+            <!-- =================================================
+                 STUDENT PROFILE
+                 ================================================= -->
+            <c-student-profile
+                record-id={recordId}
+                onprofileupdated={handleProfileUpdated}>
+            </c-student-profile>
+
+
+            <!-- =================================================
+                 ELIGIBLE JOBS
+                 ================================================= -->
+            <c-eligible-jobs
+                student-id={recordId}
+                onapplicationupdated={handleApplicationUpdated}>
+            </c-eligible-jobs>
+
+
+            <!-- =================================================
+                 MY APPLICATIONS
+                 ================================================= -->
+            <c-my-applications
+                student-id={recordId}>
+            </c-my-applications>
+
+
+            <!-- =================================================
+                 REFRESH INDICATOR
+                 ================================================= -->
+            <template if:true={isRefreshing}>
+
+                <div class="slds-m-top_medium">
+
+                    <lightning-spinner
+                        alternative-text="Refreshing application data"
+                        size="small">
+                    </lightning-spinner>
+
+                </div>
+
+            </template>
+
+        </div>
+
+    </lightning-card>
+
+</template>
